@@ -17,6 +17,8 @@ Image data along with corresponding annotations on fields of health, subspecies,
 
 All training, testing, and implementations of models and web apps were done through Google Colab, a collaborative cloud-based python IDE akin to Jupyter Notebook with access to GPUs. The entire `Capstone` repo should be cloned and uploaded to the default main folder of Google Drive for pathnames to reference files properly.
 
+**Training images are not provided in this repo due to size. Download from [Kaggle](https://www.kaggle.com/jenny18/honey-bee-annotated-images), unzip, rename folder to `bee_imgs` if not already named so, and move the entire folder inside the `data` folder in cloned repo**
+
 
 Multiple CNNs were trained separately, using subspecies and health as targets. Models were initially made using a CNN with 2 convolutional layers and 1 MaxPooling layer for reducing dimensionality, and improved upon using dropout layers, real-time image augmentation, and custom learning rate modifications. Dropout layers helped to avoid overfitting while image augmentation provided multiple transformations of each image for further training, creating a more robust network. Learning rate modifications were adapted from a thread on StackOverflow to reduce the learning rate as epochs progress. Images in their provided state were not of uniform shape, so image pre-processing was done before fitting in order to scale all images to 100x100 px, with 3 color channels. The Streamlit implementation uses the `PIL.Image` libarary to convert images from RGBA to RGB.
 
